@@ -1,4 +1,4 @@
-version: '3'
+# version: '3'
 
 services:
   asterisk:
@@ -9,7 +9,7 @@ services:
       - "5060:5060/udp"                     # SIP UDP port
       - "5060:5060"                         # SIP TCP port
       - "5061:5061"                         # SIP TLS port
-      - "100-30000:20000-30000/udp"       # RTP ports
+      - "20000-30000:20000-30000/udp"       # RTP ports
     environment:
       - SYSLOG_LEVEL=${SYSLOG_LEVEL-4}      # Logging
       - HOSTNAME=${TELE_SRV-tele}.${DOMAIN-docker.localhost}
